@@ -1,0 +1,440 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body {
+    background: black;
+    color: white;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+
+    
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,20,10,0.9)),
+                url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80')
+                no-repeat center/cover;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    border-bottom: 1px solid #00ff88;
+    transition: all 0.4s ease;
+
+    backdrop-filter: blur(6px);
+}
+
+
+header:hover {
+    box-shadow: 0 0 10px #00ff88,
+                0 0 20px #00ff88,
+                0 0 40px #00ff88;
+
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,30,15,0.95)),
+                url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80')
+                no-repeat center/cover;
+}
+
+
+.logo {
+    color: #00ff88;
+    display: flex;
+    font-weight: bold;
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+
+.logo:hover {
+    transform: scale(1.1);
+    animation: glowPulse 1s infinite alternate;
+}
+
+
+@keyframes glowPulse {
+    from { text-shadow: 0 0 10px #00ff88; }
+    to { text-shadow: 0 0 40px #00ff88; }
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+
+nav ul li a:hover {
+    color: #00ff88;
+    text-shadow: 0 0 10px #00ff88;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #00ff88;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    background: #00ff88;
+    height: 3px;
+    width: 25px;
+    margin: 4px;
+}
+
+
+
+#home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+                url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80')
+                no-repeat center center/cover;
+
+    color: white;
+    text-align: center;
+}
+
+
+#home .content {
+    max-width: 600px;
+}
+
+
+#home button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: #00ff88;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#home button:hover {
+    box-shadow: 0 0 10px #00ff88,
+                0 0 20px #00ff88;
+}
+
+
+
+#home .content {
+    max-width: 800px;       
+    margin: 0 auto;          
+    text-align: center;      
+}
+
+
+.typing {
+    color: #00ff88;
+    overflow: hidden;
+    white-space: nowrap;      
+    border-right: 3px solid #00ff88;
+
+    display: inline-block;    
+    width: 0;                 
+    animation: typing 5s steps(30, end) forwards, blink 0.5s infinite;
+}
+
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 30ch; }       
+}
+
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #00ff88;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 12px;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: #00cc66;
+    box-shadow: 0 0 15px #00ff88;
+}
+
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+
+#about img {
+    margin-top: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #00ff88;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+#about img:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 0 25px #00ff88, 0 0 40px #00ff88, 0 0 60px #00ff88; /* glowing effect */
+}
+#about {
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+
+    
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+                url('https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1600&q=80')
+                no-repeat center/cover;
+}
+
+
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#projects {
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+
+    
+    background: 
+        linear-gradient(rgba(1, 11, 7, 0.8), rgba(2, 2, 2, 0.9)),
+        url('https://phoenixnap.com/glossary/wp-content/uploads/2023/09/what-is-software-engineering.jpg') 
+        no-repeat center center;
+    
+    background-size: cover;
+    background-attachment: fixed; 
+}
+
+.card {
+    background: #111;
+    margin: 10px;
+    padding: 20px;
+    width: 250px;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #00ff88;
+}
+
+
+#contact {
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+
+    
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
+                url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') 
+                no-repeat center center;
+    
+    background-size: cover;
+    background-attachment: fixed; 
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input, form textarea {
+    width: 80%;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+footer {
+    background: #111;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #00ff88;
+}
+
+
+.icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 50%;
+    background: #00ff88;
+    transition: 0.3s;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #00ff88;
+}
+
+
+.instagram::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border: 2px solid black;
+    top: 10px;
+    left: 10px;
+}
+
+.facebook::before {
+    content: "f";
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    top: 8px;
+    left: 14px;
+}
+
+.whatsapp::before {
+    content: "W";
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    top: 8px;
+    left: 12px;
+}
+
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 220px; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+
+@media (max-width: 768px) {
+
+    .menu-icon {
+        display: flex;
+    }
+
+    nav ul {
+        position: absolute;
+        background: black;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        flex-direction: column;
+        display: none;
+        text-align: center;
+    }
+
+    nav ul li {
+        padding: 10px;
+    }
+
+    #menu-toggle:checked + .menu-icon + nav ul {
+        display: flex;
+    }
+
+    .project-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+
+    
+    .menu-icon {
+        display: flex;
+    }
+
+    
+    nav ul {
+        position: absolute;
+        background: black;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        flex-direction: column;
+        display: none;
+        text-align: center;
+    }
+
+    nav ul li {
+        padding: 10px 0;
+    }
+
+    
+    #menu-toggle:checked + .menu-icon + nav ul {
+        display: flex;
+    }
+
+    
+    .project-container {
+        flex-direction: column;
+        align-items: center;  
+    }
+
+    
+    .card {
+        width: 90%; 
+        max-width: 300px; 
+    }
+}
